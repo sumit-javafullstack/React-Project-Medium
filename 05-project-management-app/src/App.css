@@ -1,0 +1,6 @@
+.MainBody {
+  height: 100vh;
+  margin-top: 6rem;
+  display: flex;
+  gap: 3rem;
+}

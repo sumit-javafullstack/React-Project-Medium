@@ -1,0 +1,15 @@
+
+
+.parent {
+    margin-top: 150px;
+    margin-left: 250px;
+    margin-right: 250px;
+    background-color: cadetblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calculatorBody {
+    background-color: black;
+}

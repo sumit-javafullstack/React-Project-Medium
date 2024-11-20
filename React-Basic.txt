@@ -1,0 +1,68 @@
+***********************************************************************************************************
+What is Component?
+	Reuseable building block which can consist of HTML, CSS and JavaScript.
+	Separation of concerm         
+	A component in react is just java script function, A special kind of function which return JSX code. 
+
+***********************************************************************************************************
+React Execution :
+	->  When we run the react application, first index.js will execute. 
+        const root = ReactDOM.createRoot(document.getElementById('root'));  
+        This is nothing but it is calling HTML element which has id as root. Once It call, 
+        It will print HTML element. as it is rendering app.js, so HTML element with id as root will get 
+        replaced by App.js ultimately , in body of HTML page, we are replacing with <App/>
+
+    index.html :
+        This is the only HTML file which is used by React ( because of this , we call react as Single 
+        Page application ) and It is present in PUBLIC folder.
+        It will get loaded while executing ReactDOM.createRoot(document.getElementById('root')); 
+
+    JXS : 
+        In React we write code in JXS format wwhich is developer friendly but this JXS is not supported by 
+        any browser and because of this only when we see the source code, It completely differnet then the 
+        actual code
+    
+    -> Below are the two React library which we will use to create React project.	
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0"
+
+***********************************************************************************************************
+Different way of calling Component:
+    1) <ExpenseItem></ExpenseItem>
+	2) <ExpenseItem/>
+	Above , both are correct If we have to send any data as argument then we can use 1st approach and 
+    if we just have to call any component then we can go with 2nd approach.  
+
+***********************************************************************************************************
+Props: ( transfering data back and forth between components)
+
+NOTE  1) Adding Dynamic Data in JSX:
+         const expenseTitle = "Car Insurance";
+         <h2>{expenseTitle}</h2>
+
+      2) Foramt in VSStudio:
+         shift+alt+f
+
+***********************************************************************************************************
+Custom Components:
+
+
+***********************************************************************************************************
+Conditioning Rendering:
+
+
+
+***********************************************************************************************************
+
+
+
+***********************************************************************************************************
+
+
+
+
+
+
+
+
+

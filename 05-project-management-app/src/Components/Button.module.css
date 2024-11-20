@@ -1,0 +1,15 @@
+
+.projectButton{
+    margin-bottom: 2rem;
+    height: 2rem;
+    width: 8rem;
+    border-radius: rem;
+    background-color: gray;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    color: black;
+}
+
+.projectButton:hover {
+    background-color: red; /* Change background color on hover */
+    color: white; /* Change text color on hover */
+}

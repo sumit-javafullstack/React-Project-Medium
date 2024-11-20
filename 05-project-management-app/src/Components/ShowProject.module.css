@@ -1,0 +1,17 @@
+.showProjects {
+    width: 66.66%;
+    margin-top: 3rem;
+    margin-right: 32rem;
+}
+
+.removeTitleBtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.removeTitleBtn button{
+    margin-top: 2rem;
+width: 6rem;
+height: 1.5rem;
+}

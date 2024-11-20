@@ -1,0 +1,98 @@
+
+Note: Irrespective of anythings, method inside useEffect will run once whenever components
+loads for the first time.
+*********************************************************************************************************
+Example:1
+    useEffect(() =>{
+
+        console.log('Inside useEffect only method')
+    })
+
+In the above scenarios, we have only method isnide useEffect hooks and without any array for
+dependencies.
+
+    1) As usual, the method will execute when ever components loads for the first time.
+
+ ***2) The method will be excuted even when the component is re-run by useState() hooks. So, when ever
+    we will be clicking on button, since useState() hooks gets executed, 
+    the method present inside useEffect will also executed as well. 
+
+    if we click on button 5 times,
+    useEffect method will gets executed 6 time( 5 for button click and 1 for component load)
+
+*********************************************************************************************************
+
+Example:2
+    useEffect(() =>{
+
+        console.log('Inside useEffect only method')
+    },[])
+
+In the above scenarios, we have one method inside useEffect hooks and with an empty array dependency.
+
+    1) As usual, the method will execute when ever components loads for the first time.
+
+*** 2) The empty array conditions means It will execute only once when the componenets gets load.
+       After that, even if component re-run by useState hooks, the above method execute.
+
+*********************************************************************************************************
+Example 3:
+    const[counter1,setcounter1] = useState(0)
+    const[counter2,setcounter2] = useState(0)
+
+    useEffect(() =>{
+        console.log('Inside useEffect with [counter1]')
+    },[counter1])
+
+    useEffect(() =>{
+        console.log('Inside useEffect with [counter2]')
+    },[counter2])
+
+In the above scenarios, the method inside useEffect is dependent upon variable available
+inside [counter1 and counter2].
+
+    1) As usual, the method will execute when ever components loads for the first time.
+
+*** 2) Here, the method is dependent upon two variable counter1 and counetr2. When we click on counter1
+       only counter1 method will executed as counter1 variable got change and after clicking on counetr2
+       only counter2 method will get called and counter1 will remain as it is.
+
+*********************************************************************************************************
+
+Note: Execution flow with useefftct():
+    -> even though useEffect() methods executed but the execution will be the last step of component.
+       It will perfrom all the operations available inside components and at the end it will execute
+       useEffect method.
+       Proof:
+        'Outside useEffect' will always print first after this print inside useEffect method.
+
+*********************************************************************************************************
+FetchData.js:
+
+Reason to use fetchData() inside useEffect()->
+    useEffect cannot directly accept an async function because it expects either a cleanup function 
+    or nothing.
+
+Execution flow->
+        
+        1) Since we have [], so async method inside useEffect() will get call only once when components loads
+        2) Since the method inside useEffect is async, it won't get called directly, it first goes to
+             fetchData(); and from here async method is getting called.
+        3) setData(response.data);
+           setLoading(false);
+           We are updating above state inside async method , both the line will get executed one by one and 
+           after executing both the lines, useState() will trigger.
+
+           The reasn being is useEffect() will run only once and also when use are calling setStat()
+           It doesn't gurantee it will call at that time only , it just schedule the state call.
+
+
+
+
+*********************************************************************************************************
+    useRef(0):
+
+    You can use useRef to store values that change over time without causing re-renders. This is useful 
+    for keeping track of things like timers, counters, or any other mutable object.
+
+

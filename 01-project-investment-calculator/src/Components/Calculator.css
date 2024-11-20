@@ -1,0 +1,28 @@
+
+.calculator_body {
+    background-color: burlywood;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.amount {
+    display: flex;
+    gap: 60px;
+}
+.interest {
+    display: flex;
+    gap: 60px;
+}
+
+
+.text_format {
+    margin-bottom: 0;
+    color: white;
+}
+.input_format {
+    background: transparent;
+    border: 1px solid white;
+    height: 20px;
+}

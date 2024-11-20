@@ -1,0 +1,70 @@
+*************************************************************************************************
+useReducer is same like useState(), both are use to manage state and re-render the component
+if the values gets updated.
+
+We use useReducer() to maange complex state.
+
+const[counet,setCounter]=useState(0)
+    when we use useState(), we generally call one method(setCounter()) and then update counter values.
+
+Lets say we have requirement where we have to update state object based on certain conditions 
+and condition should be passed while making call to upadte the object.
+        To do this, we use usReducer Hooks.
+
+*************************************************************************************************
+we have state like below:
+    const InitialState = {
+    count:0,
+    age:30,
+    salary:20000
+    }
+we want to update based on certain conditions.
+
+const[ state , dispatch ] = useReducer(reducer,InitialState)
+
+    1) Left hand side is same as state which is state is var name, and dispatch we use to to call.
+    2) reducer is method which we have implemented to handle the state , and Initial State is  the initial
+       value of state.
+
+Calling dispatch method:
+
+    1) dispatch({type:'INCREASE_AGE', payload: state.age + 30})}
+    2) dispatch({type:'DECREASE_AGE_INCREASE_SALARY', payload : {age: state.age + 30 , 
+        salary: state.salary - 1500}})}
+
+Here, while calling dispatch we are sending type and payload with it.
+    -> type is for what kind of operation we want to perfrom or to filter
+    -> payload is for sending actual data we want to update
+
+*************************************************************************************************
+**Reducer method implmentation:
+    const reducer = (state,action)
+    Here, state is previous state and action will contain type and payload values.
+
+**return {...state, salary: action.payload}
+    ...state means we are concatinating with previous steps and only updating salary to the
+        previous state.
+
+**return {...state,...action.payload}
+    we are concatinating all the values available in the payload  with previous state.
+
+*************************************************************************************************
+
+
+
+
+
+*************************************************************************************************
+
+
+
+
+
+*************************************************************************************************
+
+
+
+
+
+*************************************************************************************************
+

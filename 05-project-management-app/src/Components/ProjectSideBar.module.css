@@ -1,0 +1,24 @@
+.sideBar{
+    width: 33.33%;
+    padding-left: 3rem;
+    padding-top: 3rem;
+    background-color: black;
+    color: beige;
+    border-top-right-radius: 2rem;
+}
+
+.titleButton {
+    list-style: none;
+}
+
+.titleButton button{
+    background: transparent;
+    color: #e6dede;
+    border: 0px;
+    list-style: none;
+    font-size: 1rem;
+}
+
+.titleButton button:hover{
+    background: rgb(83, 78, 78);
+}

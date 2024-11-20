@@ -1,0 +1,3 @@
+1) To have css styling, don't forget to import css into js
+
+2) list.map((data) => ()), Here after => we should be using ( not {}

@@ -1,0 +1,27 @@
+
+.addProject{
+    width: 66.66%;
+    margin-top: 3rem;
+    margin-right: 32rem;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 16px;
+}
+
+.menu li{
+list-style: none;
+}
+
+.input p{
+    display: flex;
+    flex-direction: column;
+}
+.inbutBox {
+    background-color: rgb(218, 212, 212);
+    border: none;
+    box-shadow: 2px;
+}

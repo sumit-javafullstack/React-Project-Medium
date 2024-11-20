@@ -1,0 +1,29 @@
+******************************************************************************************************
+<Link> is from react library and the main advantage of <link> over <a> is the pages
+doesn't get loads after clicking on url.
+
+******************************************************************************************************
+<NavBar>: NavBar component is available inside <Reactbrowser>, it basically is use for 
+        redirecting the url. 
+        eg:
+             after clicking HOME, the url will be change to /
+             after clicking on About the url will be change to  /about
+
+******************************************************************************************************
+<Routes>
+     <Route path='/about' element={<About />}></Route>
+     <Route path='/users' element={<Users />}></Route>
+
+     Basically, when we have
+                /about in the url call <About /> component
+                /Users in the url call <Users /> component
+</Routes>    
+
+******************************************************************************************************
+Users.js:
+    It is also perfroming like nav bar, basically it is creating url with each users id.
+    i.e <Link to={`/users/${user.id}`}>{user.name}</Link>
+    -? after clicking on name, the url would be change to /users/1,2,3
+
+AND we have defined urls handlers of type /users/1,2,3, inside App.js which basically redirect to UserDetail
+component.

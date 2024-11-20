@@ -1,0 +1,70 @@
+*******************************************************************************************************
+The useContext Hook is a built-in React Hook that allows you to access values provided by a React Context object. It makes it easier to share values (like data, functions, or states) deeply within a component tree without having to pass props manually through every component.
+
+*******************************************************************************************************
+Why use useContext?
+Simplifies state and value sharing: It provides an easier way to pass data to deeply nested components without "prop drilling" (passing props through every level of the component tree).
+Global state management: It works well for scenarios where you need to manage global state, like themes, user authentication status, or language settings.
+
+*******************************************************************************************************
+Difference Between useContext and useRedux:
+State Management Scope:
+
+useContext: Good for simple state management or specific global values within a React component tree. It works best when you have a limited number of values to share without complex state transformations.
+Redux (useRedux or useSelector and useDispatch): Ideal for complex state management in larger applications. Redux allows for centralizing state logic in reducers and offers features like middleware, state persistence, and time travel debugging. It handles state in a more robust way when many components need to communicate or act based on shared state.
+
+*******************************************************************************************************
+
+Steps:
+	import {createContext} from 'react'
+	1) create a context component:
+			export const CartContext = createContext({
+			items: []	
+			});
+
+	2) Wrap the above context in the component tree
+		<CartContext.Provider value={{items:[]}}>
+		
+		</CartContext.Provider>
+
+	3) Accessing context value:
+			import {useContext} from 'react'
+			import {CartContext} from './store/shopping-cart-context.js'
+			
+			Body{
+			const crtContext = useContext(CartContext);
+			
+				crtContext.items.length == 0
+			similarly
+				crtContext.map(()=>())
+			}
+	
+
+*******************************************************************************************************
+
+Create a Context.js file:
+	ProjectContext.js
+	
+Step-2
+	const ProjectContext = createContext();
+
+Step-3
+	const ProjectProvider = ({ children }) => {
+	  const [projectState, setProjectState] = useState({
+		state: undefined,
+		projects: [],
+	});
+  
+Step-4
+	  return (
+		<ProjectContext.Provider value={{ projectState, setProjectState }}>
+		  {children}
+		</ProjectContext.Provider>
+	  );
+	};
+
+export { ProjectContext, ProjectProvider };
+
+
+
+*******************************************************************************************************
